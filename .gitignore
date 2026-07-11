@@ -1,0 +1,22 @@
+# MATLAB temporary files
+*.asv
+*.autosave
+
+# MATLAB figures
+*.fig
+
+# MATLAB toolbox files
+*.mltbx
+
+# Compiled MEX files
+*.mex*
+
+# Dataset files
+*.mat
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
