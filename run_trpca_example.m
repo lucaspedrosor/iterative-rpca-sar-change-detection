@@ -45,6 +45,7 @@ referenceImage = load_sar_image(referenceFile);
 
 parameters = default_parameters();
 
+
 %% Run the proposed iterative TRPCA method
 
 result = iterative_trpca_cd( ...
