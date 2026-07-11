@@ -1,4 +1,4 @@
-# Iterative RPCA-Based SAR Change Detection
+# Iterative RPCA/TRPCA-Based SAR Change Detection
 
 Official MATLAB implementation accompanying the paper:
 
@@ -18,14 +18,15 @@ Official MATLAB implementation accompanying the paper:
 
 This repository contains the official MATLAB implementation of the iterative SAR change detection framework proposed in the paper.
 
-The proposed approach iteratively reconstructs the reference SAR image using Robust Principal Component Analysis (RPCA) or Tensor Robust Principal Component Analysis (TRPCA). At each iteration, the reconstructed reference image is incorporated into the decomposition process, allowing the method to progressively refine the background representation and improve change detection performance in scenarios with limited SAR acquisitions.
+The proposed framework iteratively reconstructs the reference SAR image using either Robust Principal Component Analysis (RPCA) or Tensor Robust Principal Component Analysis (TRPCA). At each iteration, the reconstructed reference image is incorporated into the decomposition process, progressively improving the background estimation and the corresponding change detection map, particularly in scenarios with limited SAR acquisitions.
 
-This repository includes:
+The repository includes:
 
 - Iterative RPCA-based change detection
 - Iterative TRPCA-based change detection
 - Method Rules (MR) proposed in the paper
-- Example script for processing a pair of SAR images
+- Example scripts for both RPCA and TRPCA implementations
+- Automatic repository configuration through `setup.m`
 
 ---
 
@@ -37,23 +38,57 @@ The experiments were conducted using the **CARABAS-II** dataset, which is public
 
 https://www.sdms.afrl.af.mil/
 
-After obtaining the dataset, users only need to provide **one surveillance SAR image** and **one reference SAR image** to reproduce the example included in this repository.
+To reproduce the examples, place one surveillance SAR image and one reference SAR image inside the `data` folder using the filenames:
+
+```text
+data/
+├── surveillance.mat
+└── reference.mat
+```
+
+Both MAT files must contain the SAR image stored in a variable named:
+
+```matlab
+im
+```
+
+---
+
+## Getting Started
+
+Configure the repository:
+
+```matlab
+setup
+```
+
+Run the RPCA example:
+
+```matlab
+run_rpca_example
+```
+
+Run the TRPCA example:
+
+```matlab
+run_trpca_example
+```
 
 ---
 
 ## External Dependencies
 
-This implementation relies on publicly available implementations of RPCA and TRPCA.
+This implementation relies on publicly available RPCA and TRPCA implementations.
 
-### RPCA
+### Robust PCA (RPCA)
 
 https://github.com/dlaptev/RobustPCA
 
-### TRPCA
+### Tensor Robust PCA (TRPCA)
 
 https://github.com/canyilu/Tensor-Robust-Principal-Component-Analysis-TRPCA
 
-Please download these repositories and add them to the MATLAB path before running the examples.
+Download both repositories and place them inside the `external` directory as described below. The `setup.m` script will automatically configure the MATLAB path.
 
 ---
 
@@ -63,10 +98,19 @@ Please download these repositories and add them to the MATLAB path before runnin
 iterative-rpca-sar-change-detection/
 │
 ├── README.md
+├── LICENSE
+├── .gitignore
 ├── setup.m
-├── run_example.m
+├── run_rpca_example.m
+├── run_trpca_example.m
 │
 ├── src/
+│   ├── iterative_rpca_cd.m
+│   ├── iterative_trpca_cd.m
+│   ├── apply_method_rules.m
+│   ├── load_sar_image.m
+│   └── default_parameters.m
+│
 ├── external/
 ├── data/
 ├── docs/
@@ -77,4 +121,4 @@ iterative-rpca-sar-change-detection/
 
 ## License
 
-This repository is released under the MIT License.
+This project is released under the MIT License.
