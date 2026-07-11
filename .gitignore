@@ -20,3 +20,7 @@
 # Windows
 Thumbs.db
 desktop.ini
+
+# External dependencies (download separately)
+external/RobustPCA/
+external/Tensor-Robust-Principal-Component-Analysis-TRPCA/
