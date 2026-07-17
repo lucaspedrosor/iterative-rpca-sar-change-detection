@@ -6,7 +6,7 @@ Official MATLAB implementation accompanying the paper:
 >
 > **Lucas P. Ramos**, D. I. Alves, Leonardo T. Duarte, Renato Machado, Viet Thuy Vu, and Mats I. Pettersson.
 >
-> *IEEE Transactions on Geoscience and Remote Sensing (TGRS), Early Access, 2026.*
+> *IEEE Transactions on Geoscience and Remote Sensing, vol. 64, 2026, Art. no. 5212213.*
 
 **DOI:** https://doi.org/10.1109/TGRS.2026.3710985
 
@@ -88,7 +88,7 @@ https://github.com/dlaptev/RobustPCA
 
 https://github.com/canyilu/Tensor-Robust-Principal-Component-Analysis-TRPCA
 
-Download both repositories and place them inside the `external` directory as described below. The `setup.m` script will automatically configure the MATLAB path.
+Download both repositories and place them inside the `external` directory. The `setup.m` script will automatically configure the MATLAB path.
 
 ---
 
@@ -115,6 +115,24 @@ iterative-rpca-sar-change-detection/
 ├── data/
 ├── docs/
 └── results/
+```
+
+---
+
+## Citation
+
+If you use this repository in your research, please cite:
+
+```bibtex
+@ARTICLE{Ramos2026IterativeRPCA,
+  author={Ramos, Lucas P. and Alves, D. I. and Duarte, Leonardo T. and Machado, Renato and Vu, Viet Thuy and Pettersson, Mats I.},
+  title={An Iterative Unsupervised Change Detection Method Based on Robust PCA for Small SAR Image Datasets},
+  journal={IEEE Trans. Geosci. Remote Sens.},
+  volume={64},
+  year={2026},
+  articleno={5212213},
+  doi={10.1109/TGRS.2026.3710985}
+}
 ```
 
 ---
